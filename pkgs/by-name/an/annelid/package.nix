@@ -1,7 +1,10 @@
 { lib
-, rustPlatform   # Use this instead of buildRustPlatform
+, rustPlatform
 , fetchFromGitHub
-, stdenv
+, wayland
+, libxkbcommon
+, pkg-config
+, ...
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -15,12 +18,17 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-YCJ58kwNhL0YRHTRntRxfcvzq8I1PMIlCOoKzQ4yxbc=";
   };
 
-  cargoHash = "sha256-RWqeRw/TgnNtq+T5zw8Ntj42ofvr3Fksl6gtNRkQiyE="; # Replace with real hash after first build
+  cargoHash = "sha256-RWqeRw/TgnNtq+T5zw8Ntj42ofvr3Fksl6gtNRkQiyE=";
+
+  # Add these inputs to ensure Wayland support is compiled in
+  nativeBuildInputs = [ pkg-config ];
+  buildInputs = [ wayland libxkbcommon ];
 
   meta = with lib; {
     description = "Speedrun timer with autosplitter for fxpak/sd2snes";
     homepage = "https://github.com/dagit/annelid";
     license = licenses.mit;
     mainProgram = "annelid";
+    platforms = platforms.linux;
   };
 }
