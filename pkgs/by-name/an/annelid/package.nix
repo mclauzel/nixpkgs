@@ -5,6 +5,12 @@
 , libxkbcommon
 , pkg-config
 , makeWrapper
+, libGL
+, libX11
+, libXcursor
+, libXrandr
+, libXi
+, stdenv
 , ...
 }:
 
@@ -22,12 +28,13 @@ rustPlatform.buildRustPackage rec {
   cargoHash = "sha256-RWqeRw/TgnNtq+T5zw8Ntj42ofvr3Fksl6gtNRkQiyE=";
 
   nativeBuildInputs = [ pkg-config makeWrapper ];
-  buildInputs = [ wayland libxkbcommon ];
+  buildInputs = [ wayland libxkbcommon libGL libX11 libXcursor libXrandr libXi ];
 
-  # Fix the runtime library path
   postFixup = ''
     wrapProgram $out/bin/annelid \
-      --set LD_LIBRARY_PATH "${lib.makeLibraryPath [ wayland libxkbcommon ]}"
+      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [
+        libGL libxkbcommon wayland libX11 libXcursor libXrandr libXi
+      ]}"
   '';
 
   meta = with lib; {
