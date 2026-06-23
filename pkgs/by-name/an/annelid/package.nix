@@ -4,6 +4,7 @@
 , wayland
 , libxkbcommon
 , pkg-config
+, makeWrapper
 , ...
 }:
 
@@ -20,9 +21,14 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-RWqeRw/TgnNtq+T5zw8Ntj42ofvr3Fksl6gtNRkQiyE=";
 
-  # Add these inputs to ensure Wayland support is compiled in
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [ pkg-config makeWrapper ];
   buildInputs = [ wayland libxkbcommon ];
+
+  # Fix the runtime library path
+  postFixup = ''
+    wrapProgram $out/bin/annelid \
+      --set LD_LIBRARY_PATH "${lib.makeLibraryPath [ wayland libxkbcommon ]}"
+  '';
 
   meta = with lib; {
     description = "Speedrun timer with autosplitter for fxpak/sd2snes";
