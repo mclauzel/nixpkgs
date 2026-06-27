@@ -27,7 +27,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "pngtuber-remix";
-  version = "V1.4.6"; # NOTE: pin to a real tag, e.g. from
+  version = "1.4.6"; # NOTE: pin to a real tag, e.g. from
                       # https://github.com/MudkipWorld/PNGTuber-Remix/releases
 
   src = fetchzip {
