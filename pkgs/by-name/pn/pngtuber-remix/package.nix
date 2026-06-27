@@ -59,13 +59,13 @@ stdenv.mkDerivation (finalAttrs: {
     vulkan-loader
     wayland
     zlib
-    libX11
-    libXcursor
-    libXext
-    libXfixes
-    libXi
-    libXrandr
-    libXrender
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXext
+    xorg.libXfixes
+    xorg.libXi
+    xorg.libXrandr
+    xorg.libXrender
   ];
 
   dontConfigure = true;
