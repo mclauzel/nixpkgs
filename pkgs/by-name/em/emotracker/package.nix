@@ -85,7 +85,7 @@ buildDotnetModule (finalAttrs: {
     owner = "EmoTracker-Community";
     repo = "EmoTracker";
     tag = "v${finalAttrs.version}";
-    hash = lib.fakeHash; # TODO: replace with the real hash, see notes above
+    hash = "sha256-MTTJbj1mdEwmWU2J6SjoHFI219c4yr0dUbnnTDrMAI0="; # TODO: replace with the real hash, see notes above
   };
 
   # Generate with the `fetch-deps` passthru script (see notes above).
