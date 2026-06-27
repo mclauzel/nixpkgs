@@ -76,20 +76,21 @@ stdenv.mkDerivation (finalAttrs: {
   dontConfigure = true;
   dontBuild = true;
 
-  installPhase = ''
-    runHook preInstall
+installPhase = ''
+  runHook preInstall
 
-    mkdir -p $out/share/pngtuber-remix $out/bin
+  mkdir -p $out/share/pngtuber-remix $out/bin
 
-    cp -r ./. $out/share/pngtuber-remix/
+  cp -r ./. $out/share/pngtuber-remix/
 
-    binPath=$(find $out/share/pngtuber-remix -name 'PNGTube-Remix.x86_64')
-    chmod +x "$binPath"
+  binPath=$(find $out/share/pngtuber-remix -name 'PNGTube-Remix.x86_64')
+  chmod +x "$binPath"
 
-    makeWrapper "$binPath" $out/bin/pngtuber-remix
+  makeWrapper "$binPath" $out/bin/pngtuber-remix \
+    --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath buildInputs}"
 
-    runHook postInstall
-  '';
+  runHook postInstall
+'';
 
   desktopItems = [
     (makeDesktopItem {
