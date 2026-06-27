@@ -12,10 +12,16 @@
 , libGL
 , libpulseaudio
 , libxkbcommon
+, libX11
+, libXcursor
+, libXext
+, libXfixes
+, libXi
+, libXrandr
+, libXrender
 , udev
 , vulkan-loader
 , wayland
-, xorg
 , zlib
 }:
 
@@ -59,13 +65,13 @@ stdenv.mkDerivation (finalAttrs: {
     vulkan-loader
     wayland
     zlib
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
+    libX11
+    libXcursor
+    libXext
+    libXfixes
+    libXi
+    libXrandr
+    libXrender
   ];
 
   dontConfigure = true;
