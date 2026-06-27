@@ -39,7 +39,7 @@ stdenv.mkDerivation (finalAttrs: {
     #   nix-prefetch-url --unpack <url>
     # or:
     #   nix store prefetch-file --hash-type sha256 --unpack <url>
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-v/vz6XRvADGRlpCHOh454VbnqvU8nopwQz7d073lGTc=";
     stripRoot = false;
   };
 
