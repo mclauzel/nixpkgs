@@ -81,12 +81,12 @@ stdenv.mkDerivation (finalAttrs: {
 
     mkdir -p $out/share/pngtuber-remix $out/bin
 
-    # Keep the executable and its .pck next to each other with matching
-    # basenames — Godot resolves the resource pack relative to argv[0].
     cp -r ./. $out/share/pngtuber-remix/
-    chmod +x $out/share/pngtuber-remix/PNGTube-Remix.x86_64
 
-    makeWrapper $out/share/pngtuber-remix/PNGTube-Remix.x86_64 $out/bin/pngtuber-remix
+    binPath=$(find $out/share/pngtuber-remix -name 'PNGTube-Remix.x86_64')
+    chmod +x "$binPath"
+
+    makeWrapper "$binPath" $out/bin/pngtuber-remix
 
     runHook postInstall
   '';
