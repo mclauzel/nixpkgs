@@ -2863,7 +2863,7 @@
   azahi = {
     name = "Azat Bahawi";
     email = "azat@bahawi.net";
-    matrix = "@azahi:azahi.cc";
+    matrix = "@azahi:matrix.org";
     github = "azahi";
     githubId = 22211000;
     keys = [ { fingerprint = "2688 0377 C31D 9E81 9BDF  83A8 C8C6 BDDB 3847 F72B"; } ];
@@ -4395,6 +4395,13 @@
     github = "CaitlinDavitt";
     githubId = 48105979;
     name = "Caitlin Davitt";
+  };
+  cakeforcat = {
+    email = "julia@cakeforcat.dev";
+    github = "cakeforcat";
+    githubId = 37912991;
+    name = "Julia Czarny";
+    matrix = "@cakeforcat:matrix.org";
   };
   calavera = {
     email = "david.calavera@gmail.com";
@@ -6650,6 +6657,12 @@
     github = "DeltaEvo";
     githubId = 8864716;
     name = "Duarte David";
+  };
+  demic-dev = {
+    email = "git@demic.dev";
+    github = "demic-dev";
+    githubId = 59309595;
+    name = "Michele De Cillis";
   };
   demin-dmitriy = {
     email = "demindf@gmail.com";
@@ -27420,6 +27433,11 @@
     githubId = 3889585;
     name = "Cheng Shao";
   };
+  terrorw0lf = {
+    name = "duckling";
+    github = "TERRORW0LF";
+    githubId = 61637480;
+  };
   terryg = {
     name = "Terry Garcia";
     email = "terry@terryg.org";
@@ -28952,6 +28970,12 @@
     matrix = "@uxodb:matrix.org";
     github = "uxodb";
     githubId = 20535246;
+  };
+  uzlkav = {
+    name = "Uzlkav";
+    github = "Uzlkav";
+    githubId = 177883133;
+    matrix = "@capybara_squash:unredacted.org";
   };
   V = {
     name = "V";
