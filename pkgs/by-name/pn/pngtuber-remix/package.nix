@@ -34,7 +34,7 @@ stdenv.mkDerivation (finalAttrs: {
     # NOTE: confirm the exact asset name for this tag on the releases page —
     # naming has drifted slightly between versions (e.g. "PNGTubeRemixV1.3(Linux).zip"
     # vs newer "PNGTube-RemixV<ver>(Linux).zip"). Adjust to match.
-    url = "https://github.com/MudkipWorld/PNGTuber-Remix/releases/download/V${finalAttrs.version}/PNGTube-RemixV${finalAttrs.version}(Linux).zip";
+    url = "https://github.com/MudkipWorld/PNGTuber-Remix/releases/download/V${finalAttrs.version}/PNGTubeRemixV${finalAttrs.version}.Linux.zip";
     # Placeholder — replace with the real hash. Get it with:
     #   nix-prefetch-url --unpack <url>
     # or:
